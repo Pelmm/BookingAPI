@@ -1,5 +1,7 @@
+
 package se.robin.bookingapi.controller;
 
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -30,13 +32,14 @@ public class BookingController {
     // Skapa bokning
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Booking createBooking(@RequestBody Booking booking) {
+    public Booking createBooking(@Valid @RequestBody Booking booking) {
         return bookingService.createBooking(booking);
     }
 
     // Uppdatera bokning
     @PutMapping("/{id}")
-    public Booking updateBooking(@PathVariable Long id, @RequestBody Booking booking) {
+    public Booking updateBooking(@PathVariable Long id,
+                                 @Valid @RequestBody Booking booking) {
         return bookingService.updateBooking(id, booking);
     }
 
