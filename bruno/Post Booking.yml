@@ -1,0 +1,26 @@
+info:
+  name: Post Booking
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}/bookings"
+  body:
+    type: json
+    data: |
+      {
+        "name": "Anna Andersson",
+        "email": "anna@example.com",
+        "dateTime": "2026-11-10T18:00:00",
+        "numberOfPeople": 4,
+        "status": "PENDING"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: true

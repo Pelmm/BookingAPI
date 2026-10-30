@@ -1,0 +1,23 @@
+# Git
+.git
+.gitignore
+
+# IntelliJ IDEA
+.idea
+*.iml
+out/
+
+# Gradle
+.gradle
+build/
+
+# Environment variables
+.env
+.env.*
+
+# Logs
+*.log
+
+# Operating system
+.DS_Store
+Thumbs.db
